@@ -9,3 +9,25 @@ weight <- c(ctl, trt)
 lm.D9 <- lm(weight ~ group)
 
 summary(lm.D9)
+
+install.packages('googlesheets')
+library(googlesheets)
+gs_auth()
+ss <- gs_url("https://docs.google.com/spreadsheets/d/1f2h0UU-GYEX9HDc2HKp918D3Vrf21Xirj5iHRfmuOfM/edit#gid=0")
+ss
+?googlesheets
+install.packages('tidyverse')
+library(tidyverse)
+
+gs_gap() %>% 
+  gs_copy(to = "Gapminder")
+## or, if you don't use pipes
+gs_copy(gs_gap(), to = "Gapminder")
+
+gs_edit_cells(ss, ws=1, input = "Hello", anchor="B3")
+
+?gs_read
+
+#pull google sheet into data frame
+iris <- gs_read(ss, ws = 'iris', range = NULL)
+
