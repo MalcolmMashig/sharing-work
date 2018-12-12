@@ -9,3 +9,4 @@ weight <- c(ctl, trt)
 lm.D9 <- lm(weight ~ group)
 
 summary(lm.D9)
+
