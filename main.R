@@ -10,6 +10,7 @@ lm.D9 <- lm(weight ~ group)
 
 summary(lm.D9)
 
+<<<<<<< HEAD
 install.packages('googlesheets')
 library(googlesheets)
 gs_auth()
@@ -31,3 +32,5 @@ gs_edit_cells(ss, ws=1, input = "Hello", anchor="B3")
 #pull google sheet into data frame
 iris <- gs_read(ss, ws = 'iris', range = NULL)
 
+=======
+>>>>>>> aa7556c46fe12766a04caa4d0cde2d42cffd06be
